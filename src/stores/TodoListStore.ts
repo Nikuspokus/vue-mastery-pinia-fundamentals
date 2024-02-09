@@ -7,6 +7,8 @@ export const useTodoListStore = defineStore('todoList', {
   }),
   actions: {
     addTodo(item) {
+      console.log("HELLO");
+      
       this.todoList.push({ item, id: this.id++, completed: false })
     },
     deleteTodo(itemId) {
@@ -19,6 +21,10 @@ export const useTodoListStore = defineStore('todoList', {
       if (todo) {
         todo.completed = !todo.completed
       }
+    },
+    clearList() {
+      console.log("Clearing the list");
+      this.todoList = []
     }
   }
 })
